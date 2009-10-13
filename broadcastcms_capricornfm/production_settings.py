@@ -1,5 +1,19 @@
 from broadcastcms.lite.production_settings import *
 
+DESKTOP_HOSTNAMES = (
+    'localhost:8000',
+)
+
+MOBILE_HOSTNAMES = (
+    'localhostmobile:8000',
+)
+
+ADMINS = (
+    ('Praekelt Consulting', 'bcms-errors@praekelt.com'),
+)
+
+MANAGERS = ADMINS
+
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'broadcastcms_capricornfm' # Or path to database file if using sqlite3.
 DATABASE_USER = 'root'              # Not used with sqlite3.
