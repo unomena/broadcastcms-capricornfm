@@ -1,12 +1,13 @@
 from broadcastcms.lite.production_settings import *
 
-DESKTOP_HOSTNAMES = (
-    'localhost:8000',
-)
+# Url switches allows you to specify a particular url script to use for a particular hostname.
+# Used in conjunction with broadcastcms.lite.middleware.URLSwitchMiddleware
+URL_SWITCHES = {
+    'localhost:8000': 'broadcastcms.lite.desktop_urls',
+    'localhostmobile:8000': 'broadcastcms.lite.mobile_urls',
+}
 
-MOBILE_HOSTNAMES = (
-    'localhostmobile:8000',
-)
+MOBILE_HOSTNAME = 'localhostmobile:8000'
 
 ADMINS = (
     ('Praekelt Consulting', 'bcms-errors@praekelt.com'),
@@ -27,3 +28,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bcmslite@gmail.com'
 EMAIL_HOST_PASSWORD = 'rdqq6wlk87XDS'
 EMAIL_PORT = 587
+
+#CACHE_BACKEND = 'memcached://127.0.0.1:7073/'
