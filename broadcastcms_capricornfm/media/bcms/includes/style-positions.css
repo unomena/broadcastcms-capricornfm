@@ -169,10 +169,12 @@
 					.page_form form p.text_input select.day { width: 120px; }
 					.page_form form p.text_input select.month { width: 120px; }
 					.page_form form p.text_input select.year { width: 268px; }
+					.page_form form p.text_input select.compchoice { width: 527px; }
 					.page_form form p.text_area_short { width: 529px; height: 139px; float: left; background: url('../images/forms/bg-text_area.jpg') no-repeat; position: relative; }
 					.page_form form p.text_area_short textarea { width: 509px; height: 117px; padding: 10px 8px; border: 0; background: transparent!important; position: relative; }
 					.page_form form p.text_area { width: 612px; height: 117px; background: url('../images/forms/bg-textarea_wide.jpg') no-repeat; position: relative; }
 					.page_form form p.text_area textarea { width: 592px; height: 97px; padding: 10px; border: 0; background: transparent!important; position: relative; }
+					* html .page_form form p.text_area textarea { width: 592px; height: 94px; padding: 10px; border: 0; background: transparent!important; position: relative; }
 					* html .page_form form p.text_area textarea { width: 592px; height: 94px; padding: 10px; border: 0; background: transparent!important; position: relative; }
 					.page_form form p.checkbox { width: 332px; float: left; padding: 8px 0px 0px 0px; color: #292929; position: relative; }
 					.page_form form p.checkbox_short { width: 166px; float: left; padding: 8px 0px 0px 0px; color: #292929; position: relative; }
@@ -217,9 +219,11 @@
 			/* paged results */
 			.paged_results { width: 640px; float: left; margin: 14px 0px 0px 0px; background: #000; }
 				.paged_results p.prev { width: 60px; float: left; margin: 0px 14px; background: url('../images/icon-paged_left.gif') left center no-repeat; display: inline; }
+				.paged_results p.prev_empty { width: 60px; float: left; margin: 0px 14px; display: inline; }
 				.paged_results p.prev a { float: left; padding: 0px 0px 0px 12px; display: block; }
 				.paged_results p.num { width: 460px; float: left; text-align: center; }
 				.paged_results p.next { width: 35px; float: right; margin: 0px 14px; text-align: right; background: url('../images/icon-paged_right.gif') right center no-repeat; display: inline; }
+				.paged_results p.next_empty { width: 35px; float: right; margin: 0px 14px; text-align: right; display: inline; }
 				.paged_results p.next a { float: left; padding: 0px 12px 0px 0px; display: block; }
 		
 		/* Mast Right */
@@ -265,7 +269,7 @@
 	}
 		/* Logo - provisions made for PNG format */
 		.bottom_logo { float: left; padding: 0px 0px 0px 15px; display: none; }
-			.bottom_logo a { width: 75px; height: 22px; margin: 19px 0px 0px 0px; display: block; }
+            .bottom_logo a { width: 75px; height: 22px; margin: 19px 0px 0px 0px; display: block; background: url('../images/logo_bottom.png') no-repeat; }
 		.legal { float: left; padding: 15px 0px 0px 20px; }
 		.link_list { float: right; }
 		.link_list ul { float: left; list-style-type: none; padding: 15px 26px 0px 0px; }
@@ -366,8 +370,8 @@
 			.contact_left p { position: relative; }
 			.contact_left p.field_contact { width: 308px; height: 31px; float: left; margin: 0px 0px 15px 0px; background: url('../images/forms/bg-contact_field.jpg') no-repeat; }
 			.contact_left p.field_contact input { width: 292px; float: left; padding: 7px 8px 0px 8px; background: transparent!important; }
-			.contact_left p.spam_contact span { float: left; height: 31px; margin: 0px 0px 15px 0px; }
-			.contact_left p.spam_contact span.spam_contact_txt { width: 63px; }
+            .contact_left p.spam_contact span { float: left; height: 31px; }
+            .contact_left p.spam_contact span.spam_contact_txt { width: 292px; }
 			.contact_left p.spam_contact span.spam_contact_field { width: 116px; padding: 0px 20px 0px 0px; background: url('../images/forms/bg-contact_spam.jpg') no-repeat; }
 			.contact_left p.spam_contact span.spam_contact_field input { width: 100px; padding: 7px 8px 0px 8px; background: transparent!important; }
 			.contact_left p.spam_contact span.spam_contact_image { padding: 0px 20px 0px 0px; }

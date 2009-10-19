@@ -26,8 +26,8 @@ jQuery(document).ready(function () {
 
     // apply our left + right buttons
     nav
-        .before('<img class="scrollButtons left" src="media/capricornfm/images/home/arrow-prev.jpg" />')
-        .after('<img class="scrollButtons right" src="media/capricornfm/images/home/arrow-next.jpg" />');
+        .before('<img class="scrollButtons left" src="/media/bcms/images/home/arrow-prev.jpg" />')
+        .after('<img class="scrollButtons right" src="/media/bcms/images/home/arrow-next.jpg" />');
 
     // handle nav selection
     function selectNav() {

@@ -45,6 +45,15 @@ p a.close { width: 48px; padding: 0px 21px 0px 0px; background: url('../images/i
 	#frmReportAbuse label.error { width: 195px!important; display: none; color: #ff0000!important; font-size: 10px; font-weight: normal; text-align: right; position: absolute; top: 0px; right: 5px; }
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
+/*	FORM BUSY MESSAGES												   													   */
+			
+	#frmLogin label.busy,
+	#frmRegister label.busy,
+	#frmRegister .check label.busy,
+	#frmForgottenPassword label.busy,
+	#frmReportAbuse label.busy { width: 16px!important; display: none; text-align: right; position: absolute; top: 7px; right: 5px; width: 16px; height: 16px; background:transparent url(../images/loadingsmall.gif) no-repeat scroll 0 0; }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 /*	QUICK PEEK											   																   */
 
 	.peek { width: 640px; float: left; padding: 20px; position: relative; background: #fff; color: #000; border: 8px solid #000; text-align: left; overflow: hidden; }

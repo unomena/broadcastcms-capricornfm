@@ -5,7 +5,7 @@
  * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
 */
 		  
-var tb_pathToImage = "media/bcms/images/loading.gif";
+var tb_pathToImage = "/media/bcms/images/loading.gif";
 
 /*!!!!!!!!!!!!!!!!! edit below this line at your own risk !!!!!!!!!!!!!!!!!!!!!!!*/
 
@@ -18,14 +18,14 @@ $(document).ready(function(){
 
 //add thickbox to href & area elements that have a class of .thickbox
 function tb_init(domChunk){
-	$(domChunk).click(function(){
+	$(domChunk).live("click", (function(){
 	var t = this.title || this.name || null;
 	var a = this.href || this.alt;
 	var g = this.rel || false;
 	tb_show(t,a,g);
 	this.blur();
 	return false;
-	});
+	}));
 }
 
 function tb_show(caption, url, imageGroup) {//function called when the user clicks on a thickbox link

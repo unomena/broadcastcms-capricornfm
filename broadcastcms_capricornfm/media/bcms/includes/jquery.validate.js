@@ -908,7 +908,6 @@ $.extend($.validator, {
 			this.settings.messages[element.name].remote = typeof previous.message == "function" ? previous.message(value) : previous.message;
 			
 			param = typeof param == "string" && {url:param} || param; 
-			
 			if ( previous.old !== value ) {
 				previous.old = value;
 				var validator = this;
@@ -922,6 +921,8 @@ $.extend($.validator, {
 					dataType: "json",
 					data: data,
 					success: function(response) {
+                        if (param.onSuccess)
+                            param.onSuccess();            
 						var valid = response === true;
 						if ( valid ) {
 							var submitted = validator.formSubmitted;
@@ -933,6 +934,8 @@ $.extend($.validator, {
 							var errors = {};
 							errors[element.name] = previous.message = response || validator.defaultMessage( element, "remote" );
 							validator.showErrors(errors);
+                            if (param.invalid)
+                                param.invalid();
 						}
 						previous.valid = valid;
 						validator.stopRequest(element, valid);

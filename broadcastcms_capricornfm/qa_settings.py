@@ -1,9 +1,13 @@
 from production_settings import *
 
+DEBUG = True
+
+# If you set this to False, Django won't server static content (recommended)
+SERVE_STATIC = True
+
 DATABASE_NAME += '_qa'
 
 MEDIA_ROOT = '%s/qa_media/' % BUILDOUT_PATH
-
 
 MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + (
     'debug_toolbar.middleware.DebugToolbarMiddleware',

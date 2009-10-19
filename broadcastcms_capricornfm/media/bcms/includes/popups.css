@@ -19,6 +19,9 @@
 						.uber_body .chunk_body { width: 612px; min-height: 60px; padding: 14px; float: left; display: block; }
 						.uber_body * html .chunk_body { width: 612px; height: 60px; padding: 14px; float: left; display: block; overflow: hidden; }
 			/* Studio Cam */
+            .uber_left #gallery img { display: block; width: 301px; }
+        	.uber_left #thumbs { width: 207px!important; }
+            .uber_left #thumbs ul li { padding:11px 10px 0; }
 			.uber_left { width: 310px; float: left; }
 				.uber_cam { width: 310px; float: left; border-bottom: 1px solid #dedede; }
 				.uber_cam img { display: block; }

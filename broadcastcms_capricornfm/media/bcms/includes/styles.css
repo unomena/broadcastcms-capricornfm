@@ -215,7 +215,7 @@
 	.contact_right h3 { font-size: 14px; font-weight: bold; line-height: 41px; color: #000; }
 	.contact_right p { color: #666; }
 	.contact strong { color: #000; }
-	.contact_left p.spam_contact span { font-weight: bold; color: #000; line-height: 29px; }
+    .contact_left p.spam_contact span { color: #000; line-height: 29px; }
 	
 /* ------------------------------------------------------------------------------- */
 /*	FORM VALIDATION ERROR MESSAGES												   */
@@ -229,4 +229,7 @@
 	#frmRegisterFallback label.error,
 	#frmForgottenPasswordFallback label.error,
 	#frmAbuseFallback label.error,
+	#frmProfile label.error,
+	#frmProfilePicture label.error,
+	#frmComments label.error,
 	#frmUserProfileUpdate label.error { width: 195px!important; display: none; color: #ff0000!important; font-size: 10px; font-weight: normal; text-align: right; position: absolute; top: 0px; right: 3px; }

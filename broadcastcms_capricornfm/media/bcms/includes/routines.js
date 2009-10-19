@@ -39,15 +39,16 @@ function validatePoll()
 }
 
 //Player Open
-function openPlayer() 
+function openPlayer(url) 
 {
-	window.open('listen-live.html', 'player', 'location=0,status=0,scrollbars=0,width=700,height=630')
+	window.open(url, 'player', 'location=0,status=0,scrollbars=0,width=700,height=600')
 }
 //Cam Open
-function openCam() 
+function openCam(url) 
 {
-	window.open('studio-cam.html', 'player', 'location=0,status=0,scrollbars=0,width=700,height=510')
+	window.open(url, 'player', 'location=0,status=0,scrollbars=0,width=700,height=535')
 }
+
 //Cam Flip
 jQuery(function(){
 	jQuery("#cam1_link").click(function() {
@@ -307,3 +308,158 @@ jQuery(function() {
 		}
 	});
 });
+
+// Logout
+$(function() {
+    $("#sign_out").live("click", function () {
+        var currentTime = new Date();
+        var time = currentTime.getTime();
+        $("#account_links").load("/logout?" + time);
+    });
+});
+
+
+// Like
+function afterLike(data)
+{
+    json = eval(data);
+    jQuery(".ps_likes_num").text(json.score.score);
+}
+
+$(function() {
+    $("#like_link").live("click", function () {
+        var data = {};
+        jQuery.post(jQuery(this).attr('href'), 
+            data, 
+            afterLike,
+            "json"
+        );
+        return false;
+    });
+});
+
+// Profile Form
+function validateProfile() {
+    var validator = $("#frmProfile").validate({
+        onkeyup: false,
+        onclick: false,
+        rules: {
+            username: {
+                required: true,
+                minlength: 4,
+                remote: {
+                    url: "/validate/username/",
+                    type: "post",
+                    timeout: 20000,
+                    error: function (XMLHttpRequest, textStatus, errorThrown) { showDefaultAjaxError("username", validator); },
+                    beforeSend: function (XMLHttpRequest) { showBusy("username"); },
+                    onSuccess: function () { hideBusy("username"); }
+                }
+            },
+            password: {
+                minlength: 4,
+                remote: {
+                    url: "/validate/password/",
+                    type: "post",
+                    timeout: 20000
+                }
+            },
+            password_confirm: {
+                minlength: 4,
+                remote: {
+                    url: "/validate/password-confirm/",
+                    type: "post",
+                    timeout: 20000,
+                    data: {
+                        password: function() {
+                            return $("#id_password").val();
+                        }
+                    }
+                }
+            },
+            birth_date_day: {
+                birthDate: true
+            },
+            birth_date_month: {
+                birthDate: true
+            },
+            birth_date_year: {
+                birthDate: true
+            }
+        },
+
+        groups: {
+            birth_date: "birth_date_day birth_date_month birth_date_year"
+        },
+        errorPlacement: function(error, element) {
+            if (element.attr("name") == "birth_date_day" || element.attr("name") == "birth_date_month" || element.attr("name") == "birth_date_year" )
+               error.insertAfter("#id_birth_date_year");
+            else
+                error.insertAfter(element);
+        }
+    });
+
+    $.validator.addMethod("birthDate",
+        function(value, element) {
+            day = $("#id_birth_date_day").val();
+            month = $("#id_birth_date_month").val();
+            year = $("#id_birth_date_year").val();
+            if (day != "" & month != "" & year != "") {
+                var date = new Date(year, month - 1, day);
+                var convertedDate = "" + date.getFullYear() + (date.getMonth()+1) + date.getDate();
+                var givenDate = "" + year + month + day;
+                return (givenDate == convertedDate);
+            }
+            return true
+        },
+        "Invalid date, please try again"
+    );
+}
+
+// Profile Picture Form
+function validateProfilePicture() {
+    var validator = $("#frmProfilePicture").validate({
+        onkeyup: false,
+        onclick: false,
+        rules: {
+            image: {
+                required: true
+            }
+        }
+    });
+}
+
+// Competition Form
+function validateEnterCompetition() {
+    var validator = $("#frmEnterCompetition").validate({
+        onkeyup: false,
+        onclick: false,
+        rules: {
+            answer: {
+                required: true
+            }
+        }
+    });
+}
+
+// Comments
+function validateComments() {
+    var validator = $("#frmComments").validate({
+        onkeyup: false,
+        onclick: false,
+        submitHandler: function(form) {
+            $("#register_buttons").hide();
+            $("#register_progress").show();
+            $('#frmComments').ajaxSubmit(function(response) { 
+                $("#comments").replaceWith(response);
+	            bindForm();
+                validateComments();
+            }); 
+        },
+        rules: {
+            comment: {
+                required: true
+            }
+        }
+    });
+}
