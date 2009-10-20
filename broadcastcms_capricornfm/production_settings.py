@@ -7,7 +7,7 @@ URL_SWITCHES = {
     'localhostmobile:8000': 'broadcastcms.lite.mobile_urls',
 }
 
-MOBILE_HOSTNAME = 'localhostmobile:8000'
+#MOBILE_HOSTNAME = 'localhostmobile:8000'
 
 ADMINS = (
     ('Praekelt Consulting', 'bcms-errors@praekelt.com'),
