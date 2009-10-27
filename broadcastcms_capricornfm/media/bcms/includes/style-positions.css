@@ -148,12 +148,19 @@
 					
 			/* page form */
 			.page_form { width: 640px; float: left; }
-				.page_form h1 { float: left; padding: 0px 14px; background: 0; }
-				* html .page_form h1 { float: left; padding: 0px 14px; background: 0; }
-				.page_form h2 { float: left; padding: 14px; background: 0; }
-				.page_form p.comment_add { float: right; padding: 0px 14px 0px 0px; }
-				.page_form p.blurb { width: 612px; float: left; padding: 0px 14px 7px 14px; }
-				.page_form form { width: 612px; float: left; padding: 5px 14px 14px 14px; position: relative; }
+                .page_form h1 { float: left; padding: 0px; background: 0; }
+            	* html .page_form h1 { float: left; padding: 0px; background: 0; }
+            	.page_form h2 { float: left; padding: 14px; background: 0; }
+            	.page_form p.comment_add { float: right; padding: 0px 28px 0px 0px; }
+            	.page_form p.blurb { width: 640px; float: left; padding: 0px 0px 7px 0px; }
+            	.page_form form { width: 640px; float: left; padding: 5px 0px 10px 0px; position: relative; }
+
+                .page_form.comment_form h1 { float: left; padding: 0px 14px; background: 0; }
+            	* html .page_form.comment_form h1 { float: left; padding: 0px 14px; background: 0; }
+            	.page_form.comment_form h2 { float: left; padding: 14px; background: 0; }
+            	.page_form.comment_form p.comment_add { float: right; padding: 0px 14px 0px 0px; }
+            	.page_form.comment_form p.blurb { width: 612px; float: left; padding: 0px 14px 7px 14px; }
+            	.page_form.comment_form form { width: 612px; float: left; padding: 5px 14px 14px 14px; position: relative; }
 					.page_form_row { width: 640px; float: left; padding: 0px 0px 15px 0px; }
 					.page_form_row p.note { width: 512px; float: left; margin: 0px 0px 0px 85px; display: inline; }
 					.page_form_row div.offending_comment { width: 512px; float: left; }
