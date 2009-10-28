@@ -23,10 +23,15 @@ DATABASE_HOST = ''                  # Set to empty string for localhost. Not use
 DATABASE_PORT = ''                  # Set to empty string for default. Not used with sqlite3.
 
 EMAIL_SUBJECT_PREFIX = '[CAPRICORNFM] '
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = 'capricornfmonline@gmail.com'
+#EMAIL_HOST_PASSWORD = 'gr32Ts6kc5'
+#EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'capricornfmonline@gmail.com'
-EMAIL_HOST_PASSWORD = 'gr32Ts6kc5'
+EMAIL_HOST_USER = 'bcmslite@gmail.com'
+EMAIL_HOST_PASSWORD = 'rdqq6wlk87XDS'
 EMAIL_PORT = 587
 
 #CACHE_BACKEND = 'memcached://127.0.0.1:7073/'
