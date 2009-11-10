@@ -269,7 +269,6 @@ jQuery(function() {
 	// Initialize Advanced Galleriffic Gallery
 	var galleryAdv = jQuery('#gallery').galleriffic('#thumbs', {
 		delay:                  2000,
-		numThumbs:              12,
 		preloadAhead:           10,
 		enableTopPager:         false,
 		enableBottomPager:      false,
