@@ -29,4 +29,7 @@ EMAIL_HOST_USER = 'capricornfmsouthafrica@gmail.com'
 EMAIL_HOST_PASSWORD = 'gr32Ts6kc5'
 EMAIL_PORT = 587
 
+# add the DJ ad banner template
+TEMPLATE_DIRS = ('%s/templates' % path.abspath(path.dirname(__file__)),) + TEMPLATE_DIRS
+
 #CACHE_BACKEND = 'memcached://127.0.0.1:7073/'

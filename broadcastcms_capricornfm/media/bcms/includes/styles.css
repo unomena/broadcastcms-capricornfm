@@ -208,6 +208,9 @@
 	.dj_info p.dj_info_time { color: #ED1C24; }
 	.dj_info p.dj_info_social { font-size: 14px; }
 	
+	.dj_ad_banner { text-align: center; width: 640px; }
+	.dj_ad_banner img { margin: 15px 0 15px 0; }
+	
 /* ------------------------------------------------------------------------------- */
 /*	CONTACT																		   */
 
